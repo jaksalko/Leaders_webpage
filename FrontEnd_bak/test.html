@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <title>Contact Form Tutorial by Bootstrapious.com</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href='https://fonts.googleapis.com/css?family=Lato:300,400,500' rel='stylesheet' type='text/css'> -->
+    <!-- <link href='custom.css' rel='stylesheet' type='text/css'> -->
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xl-8 offset-xl-2">
+
+                <form id="contact-form" method="post" action="estimate_process.php" enctype="multipart/form-data" role="form">
+                    <!-- <div class="messages"></div> -->
+                    <!-- 
+                        1.name
+                        2.phone_number
+                        3.e-mail
+                        4.title
+                        5.content
+                        6.time(작성시간)
+                     -->
+
+                     <!-- 
+                         -입사지원서(Apply)
+                        1.name
+                        2.phone_number
+                        3.e-mail
+                        4.apply_department
+                        5.birth_date
+                        6.content
+                        7.+portfolio(.file)  
+
+                      -->
+                    <div class="controls">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="form_name">이름 *</label>
+                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="ex)홍길동 *" required="required"
+                                        data-error="이름을 입력해주세요">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="form_phone">생년월일 *</label>
+                                    <input type="date" name="date" class="form-control">
+                                    <!-- <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="XX-XX-XX"> -->
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="form_email">메일주소 *</label>
+                                    <input id="form_email" type="email" name="email" class="form-control" placeholder="yourEmail@~" required="required"
+                                        data-error="메일주소를 확인하세요">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="form_phone">휴대번호 * </label>
+                                    <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="010-xxxx-xxxx">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form_message">문의사항 *</label>
+                            <textarea id="form_message" name="message" class="form-control" placeholder="내용입력" rows="4" required="required"
+                                data-error="내용을 입력하세요"></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <p>
+                            <input id="file" type="file" class="form-control" />
+                        </p>                        
+                        <input type="submit" class="btn btn-success btn-send " value="입력 완료">
+
+                    </div>
+                </form>
+            </div>
+            <!-- /.8 -->
+        </div>
+        <!-- /.row-->
+    </div>
+    <!-- /.container-->
+    <form  enctype="multipart/form-data">
+        <input id="desc" type="text" />
+        <input id="image" type="file" />
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
+    <!-- <script src="validator.js"></script> -->
+    <!-- <script src="contact.js"></script> -->
+</body>
+
+</html>

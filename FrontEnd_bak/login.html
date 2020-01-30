@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xl-8 offset-xl-2">
+
+                <form id="login-form" method="post" action="estimate_process.php" enctype="multipart/form-data" role="form">
+                    <div class="controls">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="form_name">아이디 *</label>
+                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="" required="required"
+                                        data-error="아이디를 입력해주세요">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <label for="form_name">&nbsp</label>
+                                <input type="button" class="btn btn-success btn-send " onclick="check_overlap()" value="중복확인">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="form_password">비밀번호 *</label>
+                                    <input id="form_name" type="password" name="name" class="form-control" placeholder="" required="required"
+                                        data-error="이름을 입력해주세요">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="form_password">비밀번호 확인*</label>
+                                    <input id="form_name" type="password" name="name" class="form-control" placeholder="" required="required"
+                                        data-error="이름을 입력해주세요">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="form_name">이름 *</label>
+                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="ex)홍길동 *" required="required"
+                                        data-error="이름을 입력해주세요">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="form_email">메일주소 *</label>
+                                    <input id="form_email" type="email" name="email" class="form-control" placeholder="yourEmail@~" required="required"
+                                        data-error="메일주소를 확인하세요">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="form_phone">휴대번호 * </label>
+                                    <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="010-xxxx-xxxx">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <p>
+                            <input id="file" type="file" class="form-control" />
+                        </p>                         -->
+                        <input type="submit" class="btn btn-success btn-send " value="입력 완료">
+
+                    </div>
+                </form>
+            </div>
+            <!-- /.8 -->
+        </div>
+        <!-- /.row-->
+    </div>
+    <!-- /.container-->
+
+    <script>
+        var check_overlap = function(){
+            fetch('http://localhost:3000/api/accountr/idcheck')
+            .then(response => response.json())
+            .then(data => {
+            console.log(data) // Prints result from `response.json()` in getRequest
+            })
+            .catch(error => console.error(error))
+        }
+
+
+        /*function postAjax(url, data, success) {
+            var params = typeof data == 'string' ? data : Object.keys(data).map(
+                    function(k){ return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) }
+                ).join('&');
+
+            var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+            xhr.open('POST', url);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState>3 && xhr.status==200) { success(xhr.responseText); }
+            };
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send(params);
+            return xhr;
+        }
+        function getAjax(url, data, success) {
+            var params = typeof data == 'string' ? data : Object.keys(data).map(
+                    function(k){ return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) }
+                ).join('&');
+
+            var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+            xhr.open('POST', url);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState>3 && xhr.status==200) { success(xhr.responseText); }
+            };
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send(params);
+            return xhr;
+        }*/
+    
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+</body>
+</html>
